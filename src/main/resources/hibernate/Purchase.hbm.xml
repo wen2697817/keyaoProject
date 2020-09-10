@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-12 14:22:12 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.glintech.keyaoProject.model.Purchase" table="purchase">
+        <id name="purchaseId" type="string">
+            <column name="purchase_id" length="50" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="materialName" type="string">
+            <column name="material_name" length="50" />
+        </property>
+        <property name="model" type="string">
+            <column name="model" length="50" />
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="10" />
+        </property>
+        <property name="amount" type="int">
+            <column name="amount" length="10" />
+        </property>
+        <property name="price" type="double">
+            <column name="price" length="10" />
+        </property>
+        <property name="pmpName" type="string">
+            <column name="pmp_name" length="50" />
+        </property>
+        <property name="memo" type="string">
+            <column name="memo" length="500" />
+        </property>
+        <property name="supplierName" type="string">
+            <column name="supplier_name" length="50" />
+        </property>
+        <property name="accessory" type="string">
+            <column name="accessory" length="500" />
+        </property>
+        <property name="startTime" type="timestamp">
+            <column name="start_time" length="19">
+            </column>
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="end_time" length="19">
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+            </column>
+        </property>
+        <many-to-one name="user" class="com.glintech.keyaoProject.model.User" fetch="select">
+			<column name="user_id" length="50" />
+		</many-to-one>
+    </class>
+</hibernate-mapping>

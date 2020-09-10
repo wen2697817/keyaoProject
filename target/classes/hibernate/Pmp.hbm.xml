@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-15 13:33:45 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.glintech.keyaoProject.model.Pmp" table="pmp">
+        <id name="pmpId" type="string">
+            <column name="pmp_id" length="50" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="pmpCode" type="string">
+            <column name="pmp_code" length="50">
+            </column>
+        </property>
+        <property name="pmpName" type="string">
+            <column name="pmp_name" length="100">
+            </column>
+        </property>
+        <property name="customerName" type="string">
+            <column name="customer_name" length="200">
+            </column>
+        </property>
+        <property name="rateProgress" type="string">
+            <column name="rate_progress" length="50">
+            </column>
+        </property>
+        <many-to-one name="user" class="com.glintech.keyaoProject.model.User" fetch="select">
+			<column name="user_id" length="50" />
+		</many-to-one>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="1000" />
+        </property>
+        <property name="startTime" type="timestamp">
+            <column name="start_time" length="19">
+            </column>
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="end_time" length="19">
+            </column>
+        </property>
+        <set name="projects" cascade="all" inverse="true">
+            <key>
+                <column name="pmp_id" length="50" />
+            </key>
+            <one-to-many class="com.glintech.keyaoProject.model.Project" />
+        </set>
+        <set name="members" cascade="all" inverse="true">
+            <key>
+                <column name="pmp_id" length="50" />
+            </key>
+            <one-to-many class="com.glintech.keyaoProject.model.Member" />
+        </set>
+        <set name="dynamics" cascade="all" inverse="true">
+            <key>
+                <column name="pmp_id" length="50" />
+            </key>
+            <one-to-many class="com.glintech.keyaoProject.model.Dynamic" />
+        </set>
+    </class>
+</hibernate-mapping>

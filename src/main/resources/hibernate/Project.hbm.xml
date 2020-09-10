@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-15 13:33:45 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.glintech.keyaoProject.model.Project" table="project" >
+        <id name="projectId" type="string">
+            <column name="project_id" length="50" />
+            <generator class="uuid.hex" />
+        </id>
+        <many-to-one name="pmp" class="com.glintech.keyaoProject.model.Pmp" fetch="select">
+			<column name="pmp_id" length="50" />
+		</many-to-one>
+        <property name="goodsImg1" type="string">
+            <column name="goods_img1" length="500">
+            </column>
+        </property>
+        <property name="goodsImg2" type="string">
+            <column name="goods_img2" length="500" />
+        </property>
+        <property name="goodsImg3" type="string">
+            <column name="goods_img3" length="500" />
+        </property>
+        <property name="goodsImg4" type="string">
+            <column name="goods_img4" length="500" />
+        </property>
+        <property name="goodsAccessory" type="string">
+            <column name="goods_accessory" length="500">
+            </column>
+        </property>
+        <property name="goodsDescription" type="string">
+            <column name="goods_description" length="500">
+            </column>
+        </property>
+        <property name="partImg1" type="string">
+            <column name="part_img1" length="500">
+            </column>
+        </property>
+        <property name="partImg2" type="string">
+            <column name="part_img2" length="500" />
+        </property>
+        <property name="partImg3" type="string">
+            <column name="part_img3" length="500" />
+        </property>
+        <property name="partImg4" type="string">
+            <column name="part_img4" length="500" />
+        </property>
+        <property name="partAccessory" type="string">
+            <column name="part_accessory" length="500">
+            </column>
+        </property>
+        <property name="partDescription" type="string">
+            <column name="part_description" length="500">
+            </column>
+        </property>
+        <property name="inferiorImg1" type="string">
+            <column name="inferior_img1" length="500">
+            </column>
+        </property>
+        <property name="inferiorImg2" type="string">
+            <column name="inferior_img2" length="500" />
+        </property>
+        <property name="inferiorImg3" type="string">
+            <column name="inferior_img3" length="500" />
+        </property>
+        <property name="inferiorImg4" type="string">
+            <column name="inferior_img4" length="500" />
+        </property>
+        <property name="inferiorAccessory" type="string">
+            <column name="inferior_accessory" length="500">
+            </column>
+        </property>
+        <property name="inferiorDescription" type="string">
+            <column name="inferior_description" length="500">
+            </column>
+        </property>
+        <property name="speedImg1" type="string">
+            <column name="speed_img1" length="500">
+            </column>
+        </property>
+        <property name="speedImg2" type="string">
+            <column name="speed_img2" length="500" />
+        </property>
+        <property name="speedImg3" type="string">
+            <column name="speed_img3" length="500" />
+        </property>
+        <property name="speedImg4" type="string">
+            <column name="speed_img4" length="500" />
+        </property>
+        <property name="speedAccessory" type="string">
+            <column name="speed_accessory" length="500">
+            </column>
+        </property>
+        <property name="speedDescription" type="string">
+            <column name="speed_description" length="500">
+            </column>
+        </property>
+        <property name="precisionImg1" type="string">
+            <column name="precision_img1" length="500">
+            </column>
+        </property>
+        <property name="precisionImg2" type="string">
+            <column name="precision_img2" length="500" />
+        </property>
+        <property name="precisionImg3" type="string">
+            <column name="precision_img3" length="500" />
+        </property>
+        <property name="precisionImg4" type="string">
+            <column name="precision_img4" length="500" />
+        </property>
+        <property name="precisionAccessory" type="string">
+            <column name="precision_accessory" length="500">
+            </column>
+        </property>
+        <property name="precisionDescription" type="string">
+            <column name="precision_description" length="500">
+            </column>
+        </property>
+        <property name="environmentImg1" type="string">
+            <column name="environment_img1" length="500">
+            </column>
+        </property>
+        <property name="environmentImg2" type="string">
+            <column name="environment_img2" length="500" />
+        </property>
+        <property name="environmentImg3" type="string">
+            <column name="environment_img3" length="500" />
+        </property>
+        <property name="environmentImg4" type="string">
+            <column name="environment_img4" length="500" />
+        </property>
+        <property name="environmentAccessory" type="string">
+            <column name="environment_accessory" length="500">
+            </column>
+        </property>
+        <property name="environmentDescription" type="string">
+            <column name="environment_description" length="500">
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="accessory" length="500">
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="1000">
+            </column>
+        </property>
+        <set name="accessorys" cascade="all" inverse="true" order-by="serial_number ASC">
+            <key>
+                <column name="project_id" length="50" />
+            </key>
+            <one-to-many class="com.glintech.keyaoProject.model.Accessory" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-12 14:22:12 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.glintech.keyaoProject.model.Member" table="member">
+        <id name="memberId" type="string">
+            <column name="member_id" length="50" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="userName" type="string">
+            <column name="user_name" length="50" />
+        </property>
+        <property name="post" type="string">
+            <column name="post" length="50" />
+        </property>
+        <property name="assignment" type="string">
+            <column name="assignment" length="100" />
+        </property>
+        <many-to-one name="pmp" class="com.glintech.keyaoProject.model.Pmp" fetch="select">
+			<column name="pmp_id" length="50" />
+		</many-to-one>
+    </class>
+</hibernate-mapping>

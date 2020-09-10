@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-15 13:33:45 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.glintech.keyaoProject.model.Dynamic" table="dynamic" >
+        <id name="dynamicId" type="string">
+            <column name="dynamic_id" length="50" />
+            <generator class="uuid.hex" />
+        </id>
+        <many-to-one name="pmp" class="com.glintech.keyaoProject.model.Pmp" fetch="select">
+			<column name="pmp_id" length="50" />
+		</many-to-one>
+        <property name="dynamicTime" type="string">
+            <column name="dynamic_time" length="19">
+            </column>
+        </property>
+        <property name="dynamicEndTime" type="string">
+            <column name="dynamic_end_time" length="19">
+            </column>
+        </property>
+        <property name="userName" type="string">
+            <column name="user_name" length="50">
+            </column>
+        </property>
+        <property name="describes" type="string">
+            <column name="describes" length="500">
+            </column>
+        </property>
+        <property name="accessory" type="string">
+            <column name="accessory" length="500">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

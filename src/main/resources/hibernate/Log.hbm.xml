@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-12 14:22:12 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.glintech.keyaoProject.model.Log" table="log" >
+        <id name="logId" type="string">
+            <column name="log_id" length="50" />
+            <generator class="uuid.hex" />
+        </id>
+        <property name="pmpCode" type="string">
+            <column name="pmp_code" length="50">
+            </column>
+        </property>
+        <property name="userName" type="string">
+            <column name="user_name" length="50">
+            </column>
+        </property>
+        <property name="logName" type="string">
+            <column name="log_name" length="50">
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
