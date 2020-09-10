@@ -181,6 +181,7 @@ a:active {
 								<th>单价</th>
 								<th>所属项目</th>
 								<th>采购人员</th>
+								<th>状态</th>
 								<th>操作</th>
 							</tr>
 						</thead>
@@ -292,6 +293,19 @@ a:active {
 						</div>
 						<br>
 						<div class="row">
+							<label class="col-xs-1 addform_label">状态</label>
+							<div class="col-xs-3">
+								<select id="status1"
+									name="purchase.status" class="form-control">
+									<option value="未使用" selected="selected">未使用</option>
+									<option value="已使用">已使用</option>
+									<option value="损坏">损坏</option>
+									<option value="维修">维修</option>
+								</select>
+							</div>
+						</div>
+						<br>
+						<div class="row">
 							<label class="col-xs-1 addform_label" style="padding-top: 10px;">附件</label>
 							<div class="col-xs-11"
 								style="text-align: left; margin-top: 10px;">
@@ -387,6 +401,13 @@ a:active {
 							<div class="col-xs-11">
 								<textarea class="form-control" id="memo2"
 									name="purchase.memo" maxlength="100" rows="3" readonly></textarea>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<label class="col-xs-1 addform_label">状态</label>
+							<div class="col-xs-3">
+								<input type="text" class="form-control" id="status2" readonly>
 							</div>
 						</div>
 						<br>

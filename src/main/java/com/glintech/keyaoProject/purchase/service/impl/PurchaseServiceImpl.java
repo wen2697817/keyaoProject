@@ -21,7 +21,7 @@ public class PurchaseServiceImpl extends BaseService implements
 	public List<Object> getAllPurchase(String materialName,
 			String model, String pmpName, String roleId,
 			String userId, PageValueObject pageVo) {
-		String hql = "select s.purchaseId,s.user.userName,s.materialName,s.model,s.unit,s.amount,s.price,s.pmpName,s.user.userId from Purchase s where 1=1 ";
+		String hql = "select s.purchaseId,s.user.userName,s.materialName,s.model,s.unit,s.amount,s.price,s.pmpName,s.user.userId,s.status from Purchase s where 1=1 ";
 		if(!StringUtils.isEmpty(materialName)){
 			hql = hql + "and s.materialName like '%" + materialName + "%' ";
 		}

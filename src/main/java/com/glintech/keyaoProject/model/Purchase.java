@@ -22,6 +22,7 @@ public class Purchase implements java.io.Serializable {
 	private String memo;
 	private String supplierName;
 	private String accessory;
+	private String status;
 	private User user;
 	private Date startTime;
 	private Date endTime;
@@ -34,7 +35,7 @@ public class Purchase implements java.io.Serializable {
 	
 	public Purchase(String purchaseId, String materialName, String model, String unit, int amount, double price,
 			String pmpName, String memo, String supplierName, String accessory, User user, Date startTime,
-			Date endTime, Date createTime) {
+			Date endTime, Date createTime,String status) {
 		super();
 		this.purchaseId = purchaseId;
 		this.materialName = materialName;
@@ -50,6 +51,7 @@ public class Purchase implements java.io.Serializable {
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.createTime = createTime;
+		this.status = status;
 	}
 	/**
 	 * @return the purchaseId
@@ -219,6 +221,12 @@ public class Purchase implements java.io.Serializable {
 	 */
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 }

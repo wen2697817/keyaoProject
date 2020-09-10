@@ -292,8 +292,8 @@ function appendRequire(form) {
 	var userId = $("#userId").val();
 	var html = "<tr><td>" + (num++) + "</td><td>" + form[2] + "</td>" + "<td>"
 			+ form[3] + "</a></td><td>" + form[4] + "</td><td>" + form[5]
-			+ "</td><td>" + form[6] + "</td><td>" + form[7] + "</td><td>"
-			+ form[1] + "</td><td>";
+			+ "</td><td>" + form[6] + "</td><td>" + form[7] + "</td><td>" + form[1] + "</td><td>"
+			+ form[9] + "</td><td>";
 	if (userId == form[8] || userId == '1') {
 		html = html
 				+ "<a href='javascript:void(0);' onclick='findEditData(\""
@@ -450,8 +450,7 @@ function save() {
 function findEditData(purchaseId) {
 	$('#loading').show();
 	$("#myModalLabel").html("修改供应商信息");
-	$
-			.ajax({
+	$.ajax({
 				type : "post",
 				url : "purchase-Purchase-findPurchaseById.action",
 				data : {
@@ -524,6 +523,7 @@ function readData(purchaseId) {
 			$('#startTime2').val(data.startTime.replace("T", " "));
 			$('#endTime2').val(data.endTime.replace("T", " "));
 			$('#memo2').val(data.memo);
+			$('#status2').val(data.status);
 			if (data.accessory) {
 				var accessoryPath = data.accessory;
 				var filePaths = accessoryPath.split("/");
