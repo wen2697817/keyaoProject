@@ -29,14 +29,6 @@ $(function() {
 					}
 				}
 			},
-			'purchase.pmpName' : {
-				message : '项目名称验证失败',
-				validators : {
-					notEmpty : {
-						message : '项目名称不能为空'
-					}
-				}
-			},
 			'purchase.unit' : {
 				message : '单位验证失败',
 				validators : {

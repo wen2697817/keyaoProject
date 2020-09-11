@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>采购管理</title>
+<title>物料管理</title>
 <%@ include file="/commons/website.jsp"%>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="<%=basePath%>css/index.css" />
@@ -149,7 +149,7 @@ a:active {
 	<div class="order_list">
 		<div class="content">
 			<div class="title-bj"></div>
-			<h2 class="mb50">采购管理</h2>
+			<h2 class="mb50">物料管理</h2>
 			<form id="frmMain" name="frmMain" action="" method="post">
 				<input type="hidden" id="jurisdiction" name="jurisdiction"
 					value="<s:property value="#session.loginInfoBean.userId"/>">
@@ -211,7 +211,7 @@ a:active {
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
 					<h4 class="modal-title" id="myModalLabel"
-						style="font-weight: bold;">新增采购</h4>
+						style="font-weight: bold;">新增物料</h4>
 				</div>
 				<div class="modal-body" id="modalbody"
 					style="height: 500px; overflow: auto;">
@@ -287,8 +287,7 @@ a:active {
 						<div class="row">
 							<label class="col-xs-1 addform_label" style="padding-top: 20px;">备注</label>
 							<div class="col-xs-11">
-								<textarea class="form-control" id="memo1"
-									name="purchase.memo" maxlength="100" rows="3"></textarea>
+								<textarea class="form-control" id="memo1" name="purchase.memo" maxlength="100" rows="3"></textarea>
 							</div>
 						</div>
 						<br>
@@ -339,7 +338,7 @@ a:active {
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
 					<h4 class="modal-title" id="myModalLabel2"
-						style="font-weight: bold;">查看采购</h4>
+						style="font-weight: bold;">查看物料</h4>
 				</div>
 				<div class="modal-body" id="modalbody2"
 					style="height: 500px; overflow: auto;">
